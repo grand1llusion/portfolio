@@ -11,4 +11,4 @@ all to unlock a "you'd pass my course" certificate. The rest of the site works w
 - `images/headshot.jpg`: profile photo
 
 Built with an AI coding agent following AWS Builder Center's "Build your website on AWS" series.
-Views are my own and do not represent the U.S. Army or the Department of Defense.
+Views are my own.

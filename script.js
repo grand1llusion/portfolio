@@ -1,7 +1,7 @@
 // The Secure Terminal: a small capture-the-flag that tells my story. The rest of the site works without it.
 (function () {
   'use strict';
-  var FLAGS = ['flag{green_to_gold}', 'flag{bluf}', 'flag{ko_not_dodge}'];
+  var FLAGS = ['flag{packets_to_agents}', 'flag{read_the_logs}', 'flag{ko_not_dodge}'];
   var PROJECTS = {
     'antisocial': { name: 'AntiSOCial', url: 'https://github.com/grand1llusion/antisocial-soc',
       line: 'An agentic SOC whose containment actions are checked by Strands Decider 2B.' },
@@ -11,12 +11,14 @@
       line: 'A Scrum team simulator: you are the Product Owner, AI agents are the team.' }
   };
   var HOPS = [
-    ['94f-repairer.army', 12, 'Fixed the gear others trusted'],
-    ['green-to-gold.rotc', 31, 'Back to school, still in uniform'],
-    ['bs-cyber.methodist.edu', 44, 'B.S. Cybersecurity & Digital Forensics, cum laude'],
-    ['officer.army.mil', 58, 'Commissioned'],
-    ['instructor.cyber-school', 73, "Taught the Army's Cyber Captains"],
-    ['planner.defensive-cyber', 0, 'Planning defense, teaching AI']
+    ['a-plus.comptia', 9, 'Hardware, operating systems, troubleshooting'],
+    ['network-plus.comptia', 17, 'How packets actually move'],
+    ['bs-cyber-forensics.edu', 26, 'B.S. Cybersecurity & Digital Forensics, cum laude'],
+    ['security-plus.comptia', 34, 'Security fundamentals'],
+    ['cysa-plus.comptia', 47, 'Analyst work: logs, alerts, threat hunting'],
+    ['securityx.comptia', 61, 'Advanced security practice'],
+    ['ms-cyber.wgu.edu', 75, 'M.S. Cybersecurity, finishing Dec 2026'],
+    ['agents.aws.lab', 0, 'Building AI agents on AWS']
   ];
 
   var wrap = document.getElementById('terminal'), out = document.getElementById('termOut');
@@ -45,6 +47,7 @@
         '  ls projects         what I\'ve built',
         '  open <project>      open a project (antisocial, soc-it-to-em, sprint-zero)',
         '  cat superpowers     my tech superpowers',
+        '  cat certs           my certifications',
         '  traceroute career   how I got here',
         '  flags               capture-the-flag progress',
         '  contact             how to reach me',
@@ -54,27 +57,30 @@
       ].join('\n'));
     },
     whoami: function () {
-      print('Bradley Papke: Army cyber officer, instructor and builder.\n' +
+      print('Bradley Papke: cybersecurity analyst and builder.\n' +
         'I teach people to defend networks, then I build things to prove the lesson works.\n' +
-        'Currently: defensive cyberspace operations planning, teaching AI fundamentals, and building AI agents on AWS.');
+        'Currently: network and log analysis, five CompTIA certifications, and AI agents on AWS. More on LinkedIn: type contact.');
     },
     ls: function (args) {
-      if (args[0] === '-a' || args[0] === '-la' || args[0] === '-al') { print('.  ..  .bluf  projects/  superpowers  career.log'); return; }
+      if (args[0] === '-a' || args[0] === '-la' || args[0] === '-al') { print('.  ..  .logs  projects/  superpowers  certs  career.log'); return; }
       if (args[0] === 'projects' || args[0] === 'projects/') { Object.keys(PROJECTS).forEach(function (k) { print(k.padEnd(14) + PROJECTS[k].line); }); return; }
       print('projects/  superpowers  career.log');
     },
     cat: function (args) {
       var f = args[0] || '';
       if (f === 'superpowers') {
-        print('🛡️  Cyber defense      CompTIA SecurityX, CySA+, Security+, Network+, A+\n' +
-          '🎓  Teaching           300+ classroom hours a year; curriculum and assessment\n' +
+        print('🛡️  Security ops       Splunk, Elastic Stack, Kibana, ACAS / Tenable Nessus\n' +
+          '🔎  Network analysis   Wireshark, tcpdump, editcap, Zeek (Bro) logs, Suricata, Snort\n' +
           '🤖  Applied AI         Amazon Bedrock, Strands Agents, Strands Decider 2B\n' +
           '☁️   AWS                Lambda, DynamoDB, GuardDuty, EventBridge, EC2, IAM, Amplify\n' +
-          '📊  Data               Python, SQL, R, Tableau, Power BI\n' +
-          '🧭  Leading teams      Certified ScrumMaster; PMP in progress');
-      } else if (f === '.bluf') {
-        print('BLUF (Bottom Line Up Front): the military habit of putting the answer first.\n' +
-          'Bottom line: I make hard technical things usable for the people who have to act on them.');
+          '📊  Scripting & data   Python, Bash, SQL, R, Tableau, Power BI\n' +
+          '🧭  Delivery           Certified ScrumMaster, Microsoft 365, PMP in progress');
+      } else if (f === 'certs') {
+        print('CompTIA SecurityX · CySA+ · Security+ · Network+ · A+\nCertified ScrumMaster · Data Analytics certificate (4.00 GPA)\nIn progress: CISSP · CISM · PMP');
+      } else if (f === '.logs') {
+        print('Oct 31 09:14:07 portfolio sshd[2207]: Accepted publickey for visitor\n' +
+          'Oct 31 09:14:09 portfolio sudo: visitor : command not allowed ; COMMAND=/usr/bin/hire-me\n' +
+          'Oct 31 09:14:11 portfolio analyst: the answer is usually in the logs. Good instinct.');
         capture(FLAGS[1]);
       } else if (f === 'career.log') {
         print('Try: traceroute career');
@@ -89,11 +95,11 @@
     },
     traceroute: function (args) {
       if (args[0] !== 'career') { print('traceroute: try traceroute career', 'err'); return; }
-      busy = true; print('traceroute to cyber-officer, ' + HOPS.length + ' hops max');
+      busy = true; print('traceroute to builder, ' + HOPS.length + ' hops max');
       HOPS.forEach(function (h, i) {
         setTimeout(function () {
           var ms = h[1] ? (h[1] + ' ms').padStart(7) : '      ★';
-          print(String(i + 1).padStart(2) + '  ' + h[0].padEnd(25) + ms + '   ' + h[2]);
+          print(String(i + 1).padStart(2) + '  ' + h[0].padEnd(24) + ms + '   ' + h[2]);
           if (i === HOPS.length - 1) { busy = false; capture(FLAGS[0]); input.focus(); }
         }, 450 * (i + 1));
       });
@@ -101,7 +107,7 @@
     flags: function () {
       var have = found();
       print('Flags: ' + have.length + '/' + FLAGS.length + (have.length ? '\n' + have.map(function (f) { return '  ✓ ' + f; }).join('\n') : ''));
-      if (have.length < FLAGS.length) print('Hints: one is at the end of a journey; one is hidden, like files that start with a dot; one needs elevated privileges.', 'dim');
+      if (have.length < FLAGS.length) print('Hints: one is at the end of a journey; one is in a hidden file (they start with a dot); one needs elevated privileges.', 'dim');
     },
     sudo: function (args) {
       if (args.join(' ') === 'hire-me' || args.join(' ') === 'hire me') {
@@ -130,7 +136,7 @@
     clear: function () { out.textContent = ''; },
     exit: function () { close(); }
   };
-  var NAMES = Object.keys(COMMANDS).concat(['ls projects', 'ls -a', 'cat superpowers', 'cat .bluf', 'traceroute career', 'sudo hire-me', 'ping bradley']);
+  var NAMES = Object.keys(COMMANDS).concat(['ls projects', 'ls -a', 'cat superpowers', 'cat certs', 'cat .logs', 'traceroute career', 'sudo hire-me', 'ping bradley']);
 
   function run(line) {
     var text = line.trim(); if (!text || busy) return;

@@ -77,8 +77,15 @@ code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .92em;
 .links { display: flex; gap: 16px; margin: 6px 0 0 !important; }
 .links a, .linkish { font-weight: 700; text-decoration: none; }
 .linkish { font: inherit; font-weight: 700; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; }
-.edu { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 24px; }
-.edu h3 { margin: 0 0 10px; } .edu ul { margin: 0; padding-left: 20px; color: #334155; }
+.certs { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 28px; }
+.certs h3 { margin: 0 0 12px; font-size: 20px; }
+.badges { list-style: none; margin: 0 0 28px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.badges li { border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 12px; padding: 10px 14px; background: #fff; }
+.badges b { display: block; font-size: 15.5px; } .badges span { color: var(--muted); font-size: 13.5px; }
+.badges li.soon { border-left-color: var(--amber); background: #fffbeb; }
+.edu-list { margin: 0; padding-left: 20px; color: #334155; }
+.more { color: var(--muted); }
+.card.planned { border-style: dashed; background: #fbfcfe; }
 .contact-lead { font-size: 19px; margin: 0 0 18px; }
 .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
 .footer { background: var(--navy); color: #94a3b8; text-align: center; padding: 28px 16px 90px; font-size: 14px; }

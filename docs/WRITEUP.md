@@ -10,7 +10,7 @@ capture-the-flag that tells my story and hides three flags.
 
 A one-page portfolio for my work in cybersecurity, AI agents and AWS. It has four sections:
 
-- **About me:** from packets to decisions: capturing traffic, hunting through logs, tuning detections, and
+- **About me:** my story, one layer at a time, from CompTIA A+ to building AI agents, and what I do now: from packets to decisions: capturing traffic, hunting through logs, tuning detections, and
   turning what I find into something a non-specialist can act on.
 - **Tech superpowers:** six skill cards, from Splunk and the Elastic Stack to Wireshark, Zeek, Suricata,
   Amazon Bedrock and Strands Agents.
@@ -50,6 +50,9 @@ works fully without it.
 [Screenshot: the site on a phone] (`docs/screenshots/6-phone.png`)
 
 ## AWS services used
+
+I followed the *Build a Website on the Cloud* tutorial path and host the site with AWS Amplify Hosting.
+
 
 - **AWS Amplify Hosting:** serves the site over HTTPS on Amplify's global CDN. I connected the GitHub
   repository, so every push to `main` builds and deploys automatically; there is no build step, Amplify

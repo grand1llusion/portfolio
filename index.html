@@ -3,167 +3,165 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bradley Papke · Cybersecurity, AI and AWS</title>
-<meta name="description" content="Bradley Papke: cybersecurity analyst and builder. AI agents on AWS, security tooling, and certifications.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1220'/%3E%3Ctext x='5' y='22' font-size='15' font-family='monospace' font-weight='700' fill='%2334d399'%3E%3E_%3C/text%3E%3C/svg%3E">
+<title>Bradley Papke · Still Curious</title>
+<meta name="description" content="Bradley Papke: cybersecurity, teaching and AI agents on AWS. Travel through 25 years at the desk, and hack the terminal inside.">
+<meta name="theme-color" content="#0b141a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b141a'/%3E%3Ctext x='5' y='22' font-size='15' font-family='monospace' font-weight='700' fill='%23e8bf7c'%3E%3E_%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap">
+<link rel="preload" as="image" href="images/years/2001.jpg">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="themes/circuit.css">
 </head>
 <body>
-<a class="skip" href="#about">Skip to content</a>
-<header class="nav" id="top">
-  <a class="nav-brand" href="#top"><span class="prompt">&gt;_</span> Bradley Papke</a>
-  <nav aria-label="Sections">
-    <a href="#about">About</a><a href="#superpowers">Superpowers</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
-  </nav>
+<a class="skip" href="#journey">Skip to the timeline</a>
+<div class="site">
+<header class="top">
+  <a class="brand" href="#top" id="top">BRADLEY PAPKE<span>CYBER OPERATIONS PLANNER · BUILDER · INSTRUCTOR</span></a>
+  <nav aria-label="Sections"><a href="#journey">Journey</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <p class="eyebrow">Cybersecurity · AI agents · AWS</p>
-      <h1>Defense, <em>decoded.</em></h1>
-      <p class="lead">Security analyst and builder. I work with network and log analysis tools, hold five CompTIA
-        certifications, and build AI agents on AWS that explain security to the people who have to act on it.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#projects">See my projects</a>
-        <button class="btn terminal-btn" type="button" data-open-terminal>&gt;_ Open the terminal</button>
-      </div>
-      <p class="hint" id="hint">💡 Don't just read about it. Hack it. Open the terminal and type <code>help</code>.
-        Three flags are hidden inside.</p>
-    </div>
-    <div class="hero-photo">
-      <div class="photo-ring">
-        <img src="images/headshot.jpg" alt="Bradley Papke" width="260" height="260" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'photo-fallback',textContent:'BP'}))">
-      </div>
-      <div class="status-card" aria-hidden="true">
-        <span class="dot"></span> <code>status: building on AWS</code>
-      </div>
-    </div>
-  </div>
-</section>
-
 <main>
-  <section id="about" class="section">
-    <h2 class="section-title"><span>01</span> About me</h2>
+  <section class="intro">
+    <div>
+      <span class="eyebrow">CYBERSECURITY · TEACHING · AI AGENTS ON AWS</span>
+      <h1>Still asking<br>how things work.</h1>
+    </div>
+    <div>
+      <p>A hand-me-down computer in my bedroom started a journey through electronics repair, cyber operations and
+        teaching. Drag through the years below, and click anything on the desk to hear its story.</p>
+      <p class="hint" id="hint"><span aria-hidden="true">💡</span> Every computer screen on this desk is a real terminal.
+        Click one (or press <kbd>`</kbd>) and type <code>help</code>. Three flags are hidden inside.</p>
+    </div>
+  </section>
+
+  <section id="journey" aria-label="Interactive career timeline">
+    <div class="scene">
+      <div id="year-art" aria-hidden="true"></div>
+      <div class="shade"></div>
+      <div class="scene-heading"><span id="year-label"></span><h2 id="headline"></h2></div>
+      <div id="markers"></div>
+      <div class="desk-note" aria-hidden="true"><span id="note-label"></span><strong id="note-text"></strong></div>
+      <button class="family-photo" id="family-photo" type="button" hidden><span id="family-drawing" aria-hidden="true"></span><span class="photo-caption" id="family-caption"></span></button>
+      <span class="scene-hint">CLICK AN OBJECT TO OPEN ITS STORY · CLICK THE SCREEN FOR THE TERMINAL</span>
+    </div>
+    <div class="timeline">
+      <div class="timeline-top">
+        <div><span id="chapter"></span><p id="chapter-name">A life in technology</p></div>
+        <output id="selected-year" for="year-slider"></output>
+      </div>
+      <label for="year-slider" class="sr-only">Travel through the years</label>
+      <input id="year-slider" type="range" min="0" max="17" value="0" step="0.001">
+      <div class="year-ticks" id="year-ticks" aria-label="Jump to a year"></div>
+      <div class="timeline-actions"><span>Drag to travel through time</span><button id="future" type="button">What’s next ↗</button></div>
+    </div>
+    <div class="story-under"><p id="year-summary"></p><p class="family-context" id="family-context"></p></div>
+  </section>
+
+  <section id="about" class="block">
+    <span class="eyebrow">01 · ABOUT ME</span>
+    <h2>Build understanding.<br>Help people grow.</h2>
     <div class="about">
       <div>
-        <p><strong>My story, one layer at a time.</strong> I started at the bottom of the stack with CompTIA A+:
-          hardware, operating systems, and why things break. Network+ showed me how packets actually move, and I
-          was hooked. I earned a B.S. in Cybersecurity and Digital Forensics, then kept climbing: Security+,
-          CySA+ for analyst work, and SecurityX for advanced practice. Each step taught me something I now
-          teach others.</p>
-        <p>I'm a cybersecurity professional who likes the whole path from packets to decisions: capturing and reading
-          traffic, hunting through logs, tuning detections, and then turning what I find into something a
-          non-specialist can act on.</p>
-        <p>Lately that means building AI agents on AWS: an incident responder whose actions are checked by a decision
-          model, a triage agent wired to live Amazon GuardDuty findings, and a Scrum team simulator built with Strands
-          Agents. I'm finishing an M.S. in Cybersecurity and Information Assurance and an M.B.A. in IT Management.</p>
-        <p><strong>What drives me:</strong> making hard technical ideas usable, and proving skills by building things
-          you can run, not just listing them.</p>
-        <p class="more">More about my background on <a href="https://www.linkedin.com/in/bradleypapke">LinkedIn</a>.</p>
+        <p>I'm a Cyber Operations Planner with a background in electronics repair, communications, cybersecurity and
+          instruction. I started as an Army Small Electronics Repairman, earned a B.S. in Cybersecurity and Digital
+          Forensics, worked on an offensive cyber team, and taught at the Cyber School.</p>
+        <p>What ties it together: I like making difficult ideas easier to understand, and then proving them by building
+          something that works. Lately that means AI agents on AWS that explain security to the people who have to
+          act on it.</p>
+        <p>My wife and I have four children. I'm finishing an M.S. in Cybersecurity and Information Assurance and an
+          M.B.A. in IT Management.</p>
       </div>
       <ul class="facts">
         <li><b>5</b><span>CompTIA certifications, through SecurityX</span></li>
         <li><b>3</b><span>AI agents built and shipped on AWS this fall</span></li>
-        <li><b>2</b><span>master's degrees in progress: cybersecurity and IT management</span></li>
+        <li><b>6</b><span>capture-the-flag wins, from CrowdStrike to Dragos</span></li>
       </ul>
     </div>
   </section>
 
-  <section id="superpowers" class="section alt">
-    <h2 class="section-title"><span>02</span> Tech superpowers</h2>
-    <div class="cards powers">
-      <article class="card"><div class="icon">🛡️</div><h3>Security operations</h3>
-        <p>Threat detection, alert triage, incident analysis and vulnerability management.</p>
+  <section id="skills" class="block">
+    <span class="eyebrow">02 · TECH SUPERPOWERS</span>
+    <h2>Knowledge put into practice.</h2>
+    <div class="cards">
+      <article><div class="icon" aria-hidden="true">🛡️</div><h3>Security operations</h3>
+        <p>Threat detection, alert triage, incident analysis, vulnerability management and defensive cyber planning.</p>
         <p class="tags">Splunk · Elastic Stack · Kibana · ACAS / Tenable Nessus</p></article>
-      <article class="card"><div class="icon">🔎</div><h3>Network &amp; traffic analysis</h3>
+      <article><div class="icon" aria-hidden="true">🔎</div><h3>Network &amp; traffic analysis</h3>
         <p>Capture, trim and read packets; write and tune IDS rules; hunt in network logs.</p>
         <p class="tags">Wireshark · tcpdump · editcap · Zeek (Bro) logs · Suricata · Snort</p></article>
-      <article class="card"><div class="icon">🤖</div><h3>Applied AI</h3>
+      <article><div class="icon" aria-hidden="true">🤖</div><h3>Applied AI</h3>
         <p>Agents with guardrails, decision models and plain-English output.</p>
-        <p class="tags">Amazon Bedrock · Strands Agents · Strands Decider 2B · Claude</p></article>
-      <article class="card"><div class="icon">☁️</div><h3>Building on AWS</h3>
+        <p class="tags">Amazon Bedrock · Strands Agents · Strands Decider 2B</p></article>
+      <article><div class="icon" aria-hidden="true">☁️</div><h3>Building on AWS</h3>
         <p>Serverless and GPU-backed apps, least-privilege IAM, event-driven security automation.</p>
         <p class="tags">Lambda · DynamoDB · GuardDuty · EventBridge · EC2 · IAM · Amplify</p></article>
-      <article class="card"><div class="icon">📊</div><h3>Scripting &amp; data</h3>
-        <p>Automating the boring parts and turning logs and numbers into decisions.</p>
-        <p class="tags">Python · Bash · SQL · R · Tableau · Power BI</p></article>
-      <article class="card"><div class="icon">🧭</div><h3>Delivery &amp; productivity</h3>
-        <p>Running work in short, visible cycles and keeping teams in sync.</p>
-        <p class="tags">Scrum (Certified ScrumMaster) · Microsoft 365 · PMP in progress</p></article>
+      <article><div class="icon" aria-hidden="true">🧑‍🏫</div><h3>Teaching &amp; leading</h3>
+        <p>Classroom instruction, field training for cyber officers, mentoring, and Scrum for real teams.</p>
+        <p class="tags">Experiential learning (Kolb) · Certified ScrumMaster</p></article>
+      <article><div class="icon" aria-hidden="true">🔧</div><h3>Hardware &amp; scripting</h3>
+        <p>From soldering irons and radios to the scripts that automate the boring parts.</p>
+        <p class="tags">Electronics repair · Python · Bash · SQL · Raspberry Pi</p></article>
     </div>
   </section>
 
-  <section id="projects" class="section">
-    <h2 class="section-title"><span>03</span> Projects &amp; certifications</h2>
+  <section id="projects" class="block">
+    <span class="eyebrow">03 · PROJECTS &amp; ACHIEVEMENTS</span>
+    <h2>From learning to building.</h2>
     <div class="cards projects">
-      <article class="card project">
-        <p class="kicker">AWS hackathon · Strands Decider 2B</p>
-        <h3>AntiSOCial</h3>
-        <p>An agentic SOC that doesn't do small talk. An AI responder on Amazon Bedrock proposes containment
-          actions; Strands Decider 2B checks each one, catching prompt injection hidden in alerts. Benchmarked
-          on CPU and GPU.</p>
-        <p class="links"><a href="https://github.com/grand1llusion/antisocial-soc">Code</a>
-          <a href="https://www.youtube.com/watch?v=pM7DzrvjEMY">Video</a></p>
-      </article>
-      <article class="card project">
-        <p class="kicker">AWS weekend challenges · GuardDuty + EventBridge</p>
-        <h3>SOC It To 'Em</h3>
-        <p>An AI security analyst that calls KO, SPLIT DECISION or DODGE in plain English, then got a live
-          wire: it triages real Amazon GuardDuty findings on its own, with account IDs redacted.</p>
-        <p class="links"><a href="https://github.com/grand1llusion/rock-em-soc-em-robot">Code</a>
-          <a href="https://www.youtube.com/watch?v=u9MZofCVn0s">Video</a></p>
-      </article>
-      <article class="card project">
-        <p class="kicker">AWS hackathon · Strands Agents for social good</p>
-        <h3>Sprint Zero</h3>
-        <p>A free Scrum team simulator for people about to join their first team. You play the Product Owner;
-          an AI Scrum Master and seven AI developers respond like a real team.</p>
-        <p class="links"><a href="https://github.com/grand1llusion/sprint-zero">Code</a>
-          <a href="https://www.youtube.com/watch?v=Mif7gT-GCiY">Video</a></p>
-      </article>
-      <article class="card project">
-        <p class="kicker">This site</p>
-        <h3>This portfolio</h3>
-        <p>Built with an AI coding agent and deployed on AWS Amplify Hosting. Its Secure Terminal is a small
-          capture-the-flag; see how many flags you can find.</p>
-        <p class="links"><button class="linkish" type="button" data-open-terminal>Open the terminal</button></p>
-      </article>
-      <article class="card project planned">
-        <p class="kicker">Coming next</p>
-        <h3>Skill demos</h3>
-        <p>A hands-on project for each tool above, built around one simulated incident: from packet capture through
-          Zeek, Suricata and Snort, into Elastic and Splunk dashboards.</p>
-      </article>
+      <article><span class="kicker">AWS HACKATHON · STRANDS DECIDER 2B</span><h3>AntiSOCial</h3>
+        <p>An agentic SOC that doesn't do small talk. An AI responder on Amazon Bedrock proposes containment actions;
+          Strands Decider 2B checks each one, catching prompt injection hidden in alerts.</p>
+        <p class="links"><a href="https://github.com/grand1llusion/antisocial-soc">Code ↗</a> <a href="https://www.youtube.com/watch?v=pM7DzrvjEMY">Video ↗</a></p></article>
+      <article><span class="kicker">AWS CHALLENGE · GUARDDUTY + EVENTBRIDGE</span><h3>SOC It To ’Em</h3>
+        <p>An AI security analyst that calls KO, SPLIT DECISION or DODGE in plain English, and triages real Amazon
+          GuardDuty findings on its own, with account IDs redacted.</p>
+        <p class="links"><a href="https://github.com/grand1llusion/rock-em-soc-em-robot">Code ↗</a> <a href="https://www.youtube.com/watch?v=u9MZofCVn0s">Video ↗</a></p></article>
+      <article><span class="kicker">AWS HACKATHON · STRANDS AGENTS FOR SOCIAL GOOD</span><h3>Sprint Zero</h3>
+        <p>A free Scrum team simulator for people about to join their first team. You play the Product Owner; an AI
+          Scrum Master and seven AI developers respond like a real team.</p>
+        <p class="links"><a href="https://github.com/grand1llusion/sprint-zero">Code ↗</a> <a href="https://www.youtube.com/watch?v=Mif7gT-GCiY">Video ↗</a></p></article>
+      <article><span class="kicker">THIS SITE · AWS AMPLIFY</span><h3>This portfolio</h3>
+        <p>A time-travelling desk with a capture-the-flag terminal inside. Plain HTML, CSS and JavaScript, deployed
+          from GitHub with AWS Amplify Hosting.</p>
+        <p class="links"><a href="https://github.com/grand1llusion/portfolio">Code ↗</a> <button class="linkish" type="button" data-open-terminal>Open the terminal</button></p></article>
     </div>
-    <div class="certs" id="certifications">
-      <h3>Certifications</h3>
-      <ul class="badges">
-        <li><b>CompTIA SecurityX</b><span>Advanced security practitioner</span></li>
-        <li><b>CompTIA CySA+</b><span>Cybersecurity analyst</span></li>
-        <li><b>CompTIA Security+</b></li>
-        <li><b>CompTIA Network+</b></li>
-        <li><b>CompTIA A+</b></li>
-        <li><b>Certified ScrumMaster</b><span>Scrum Alliance</span></li>
-        <li><b>Data Analytics certificate</b><span>4.00 GPA</span></li>
-        <li class="soon"><b>In progress</b><span>CISSP · CISM · PMP</span></li>
-      </ul>
-      <h3>Education</h3>
-      <ul class="edu-list">
-        <li>M.S., Cybersecurity and Information Assurance: Western Governors University (expected Dec 2026)</li>
-        <li>M.B.A., Information Technology Management: Western Governors University (expected 2027)</li>
-        <li>B.S., Cybersecurity and Digital Forensics: Methodist University, cum laude</li>
-      </ul>
+
+    <div class="creds">
+      <div>
+        <h3>Certifications</h3>
+        <ul class="badges">
+          <li><b>CompTIA SecurityX</b><span>2026</span></li>
+          <li><b>CompTIA CySA+</b><span>2023</span></li>
+          <li><b>CompTIA Network+</b><span>2022</span></li>
+          <li><b>CompTIA Security+</b><span>2020</span></li>
+          <li><b>CompTIA A+</b><span>2016</span></li>
+          <li><b>Certified ScrumMaster</b><span>2024</span></li>
+          <li><b>Journeyman, Electronics Technician</b><span>2018</span></li>
+          <li class="soon"><b>Next</b><span>PenTest+ · CISM · CISSP · Certified Scrum Trainer</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Competitions</h3>
+        <ul class="plain">
+          <li>CrowdStrike AI CTF, Rocky Mountain Cyber Symposium (2025)</li>
+          <li>Hammercon CTF through CACI; Dragos CTF (2026)</li>
+          <li>Smaller CTFs through DARPA and Zapier (2026)</li>
+        </ul>
+        <h3>Education</h3>
+        <ul class="plain">
+          <li>M.S., Cybersecurity and Information Assurance, Western Governors University (expected Dec 2026)</li>
+          <li>M.B.A., IT Management, Western Governors University (expected 2027)</li>
+          <li>B.S., Cybersecurity and Digital Forensics, Methodist University, cum laude</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="section alt">
-    <h2 class="section-title"><span>04</span> Contact</h2>
-    <p class="contact-lead">Working on something in security, AI or cloud? I'm happy to talk.</p>
+  <section id="contact" class="block">
+    <span class="eyebrow">04 · CONTACT</span>
+    <h2>Curious about something?</h2>
+    <p class="contact-lead">Working on something in security, AI, cloud or teaching? I'm happy to talk.</p>
     <p class="contact-links">
       <a class="btn primary" href="mailto:bradley.papke@gmail.com">Email me</a>
       <a class="btn" href="https://www.linkedin.com/in/bradleypapke">LinkedIn</a>
@@ -172,30 +170,33 @@
   </section>
 </main>
 
-<footer class="footer">
-  <p>Views are my own.</p>
-  <p>Built with an AI coding agent · Hosted on AWS Amplify · <button class="linkish" type="button" data-open-terminal>&gt;_ terminal</button></p>
-</footer>
+<footer><span>CURIOUS THEN. STILL CURIOUS NOW.</span><span>Built with an AI coding agent · Hosted on AWS Amplify</span>
+  <button class="linkish" type="button" data-open-terminal>&gt;_ terminal</button><span>Views are my own.</span></footer>
+</div>
 
-<button class="fab" type="button" data-open-terminal aria-label="Open the secure terminal">&gt;_</button>
+<button class="fab" type="button" data-open-terminal aria-label="Open the terminal">&gt;_</button>
+
+<dialog id="memory"><div class="dialog-top"><span id="memory-meta"></span><button id="close-memory" type="button" aria-label="Close story">×</button></div>
+  <h2 id="memory-title"></h2><div id="memory-content"></div></dialog>
+<div class="sr-only" id="announcement" aria-live="polite"></div>
 
 <div class="term-wrap" id="terminal" hidden>
   <div class="term" role="dialog" aria-modal="true" aria-labelledby="termTitle">
     <div class="term-bar">
       <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span id="termTitle">papke@portfolio: ~ (secure terminal)</span>
+      <span id="termTitle">papke@desk: ~/<span id="termYear">2001</span></span>
       <span class="flags-badge" id="flagsBadge">🚩 0/3</span>
       <button type="button" class="term-close" id="termClose" aria-label="Close the terminal">✕</button>
     </div>
     <div class="term-out" id="termOut" aria-live="polite"></div>
     <form class="term-in" id="termForm" autocomplete="off">
-      <label for="termInput" class="ps1">papke@portfolio:~$</label>
+      <label for="termInput" class="ps1" id="ps1">papke@desk:~/2001$</label>
       <input id="termInput" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Terminal command">
     </form>
     <div class="term-keys" aria-label="Quick commands">
-      <button type="button" data-cmd="help">help</button><button type="button" data-cmd="whoami">whoami</button>
-      <button type="button" data-cmd="ls projects">ls projects</button><button type="button" data-cmd="traceroute career">traceroute career</button>
-      <button type="button" data-cmd="flags">flags</button>
+      <button type="button" data-cmd="help">help</button><button type="button" data-cmd="ls">ls</button>
+      <button type="button" data-cmd="cd 2016">cd 2016</button><button type="button" data-cmd="traceroute career">traceroute career</button>
+      <button type="button" data-cmd="ls projects">ls projects</button><button type="button" data-cmd="flags">flags</button>
     </div>
   </div>
 </div>
@@ -206,13 +207,16 @@
     <h2 id="certTitle">You'd pass my course 🎓</h2>
     <p>This certifies that</p>
     <p class="cert-name" id="certName">A curious visitor</p>
-    <p>found all three flags in the Secure Terminal: <code>flag{packets_to_agents}</code>, <code>flag{read_the_logs}</code> and
+    <p>found all three flags in the desk terminal: <code>flag{packets_to_agents}</code>, <code>flag{read_the_logs}</code> and
       <code>flag{ko_not_dodge}</code>.</p>
     <p class="cert-sign">Bradley Papke, Instructor <span id="certDate"></span></p>
     <div class="cert-actions"><button class="btn primary" type="button" id="certPrint">Print or save as PDF</button>
       <button class="btn" type="button" id="certClose">Close</button></div>
   </div>
 </div>
+
+<script src="data.js"></script>
+<script src="journey.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

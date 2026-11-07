@@ -57,7 +57,7 @@
       ].join('\n'));
     },
     whoami: function () {
-      print('Bradley Papke: cybersecurity analyst and builder.\n' +
+      print('Bradley Papke: cybersecurity analyst and builder. Defense, decoded.\n' +
         'I teach people to defend networks, then I build things to prove the lesson works.\n' +
         'Currently: network and log analysis, five CompTIA certifications, and AI agents on AWS. More on LinkedIn: type contact.');
     },

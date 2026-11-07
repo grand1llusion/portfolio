@@ -4,7 +4,7 @@ The plan the site is built from (step 3 of "Build your website on AWS"). Technic
 certifications only; background lives on LinkedIn.
 
 ## Introduction
-Cybersecurity analyst and builder. Tagline: "I teach people to defend networks, then I build things to prove
+Cybersecurity analyst and builder. Tagline: "Defense, decoded." Theme: circuit board (themes/circuit.css). Old line: "I teach people to defend networks, then I build things to prove
 the lesson works."
 
 ## About me

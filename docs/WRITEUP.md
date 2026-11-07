@@ -27,7 +27,7 @@ A one-page portfolio for my work in cybersecurity, AI agents and AWS. It has fou
 I teach people to defend networks, and the best lessons let you try it yourself. So instead of only listing
 skills, the site has a terminal you can hack.
 
-A hint under the headline says: *"Open the terminal and type `help`. Three flags are hidden inside."* A
+A hint under the headline says: *"Don't just read about it. Hack it. Open the terminal and type `help`. Three flags are hidden inside."* A
 `>_` button opens it (so does the backtick key). The commands tell my story:
 
 - `whoami`, `ls projects`, `cat superpowers`, `cat certs`, `open sprint-zero`
